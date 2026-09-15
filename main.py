@@ -19,7 +19,7 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 return
-        dt += clock.tick(60) / 1000
+        dt = clock.tick(60) / 1000
         screen.fill("black")
         player.draw(screen)
         player.update(dt)
