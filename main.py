@@ -10,7 +10,7 @@ from player import Player
 from shot import Shot
 
 
-def main():
+def main() -> None:
 
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -51,8 +51,7 @@ def main():
             for asteroid in asteroids:
                 if shot.collides_with(asteroid):
                     log_event("asteroid_shot")
-                    asteroid.kill()
-                    shot.kill()
+                    asteroid.split()
 
 
         updatable.update(dt)
